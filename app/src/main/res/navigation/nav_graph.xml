@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.calendarandmapapp.fragments.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment_to_eventFragment"
+            app:destination="@id/eventFragment" />
+        <action
+            android:id="@+id/action_mapsFragment_to_eventCreationFragment"
+            app:destination="@id/eventCreationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.calendarandmapapp.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainEventListFragment"
+            app:destination="@id/mainEventListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.calendarandmapapp.fragments.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_mainEventListFragment"
+            app:destination="@id/mainEventListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainEventListFragment"
+        android:name="com.example.calendarandmapapp.fragments.MainEventListFragment"
+        android:label="fragment_main_event_list"
+        tools:layout="@layout/fragment_main_event_list" >
+        <action
+            android:id="@+id/action_mainEventListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_mainEventListFragment_to_eventCreationFragment"
+            app:destination="@id/eventCreationFragment" />
+        <action
+            android:id="@+id/action_mainEventListFragment_to_eventFragment"
+            app:destination="@id/eventFragment" />
+        <action
+            android:id="@+id/action_mainEventListFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventCreationFragment"
+        android:name="com.example.calendarandmapapp.fragments.EventCreationFragment"
+        android:label="fragment_event_creation"
+        tools:layout="@layout/fragment_event_creation" >
+        <action
+            android:id="@+id/action_eventCreationFragment_to_mainEventListFragment"
+            app:destination="@id/mainEventListFragment" />
+        <action
+            android:id="@+id/action_eventCreationFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.example.calendarandmapapp.fragments.EventFragment"
+        android:label="fragment_event"
+        tools:layout="@layout/fragment_event" >
+        <action
+            android:id="@+id/action_eventFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_eventFragment_to_eventCreationFragment"
+            app:destination="@id/eventCreationFragment" />
+        <action
+            android:id="@+id/action_eventFragment_to_mainEventListFragment"
+            app:destination="@id/mainEventListFragment" />
+        <action
+            android:id="@+id/action_eventFragment_to_viewLocationFragment"
+            app:destination="@id/viewLocationFragment" />
+        <action
+            android:id="@+id/action_eventFragment_to_viewLocationFragment2"
+            app:destination="@id/viewLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewLocationFragment"
+        android:name="com.example.calendarandmapapp.fragments.ViewLocationFragment"
+        android:label="fragment_view_location"
+        tools:layout="@layout/fragment_view_location" >
+        <action
+            android:id="@+id/action_viewLocationFragment_to_eventFragment"
+            app:destination="@id/eventFragment" />
+    </fragment>
+</navigation>
